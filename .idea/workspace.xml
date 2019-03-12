@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d3d4bd43-5f31-4ca2-abf3-00bd6a86b493" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/example/lib/k1.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/example/lib/k2.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/example/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/example/lib/main.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flutter_animation_progress_bar.iml" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_animation_progress_bar.iml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.dart_tool/" />
     <ignored path="$PROJECT_DIR$/.idea/" />
@@ -18,16 +22,17 @@
     <session id="-1305434100">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="2" />
+          <entry key="project.closed" value="4" />
           <entry key="project.open.time.16" value="1" />
           <entry key="project.open.time.2" value="1" />
+          <entry key="project.open.time.26" value="1" />
           <entry key="project.open.time.4" value="1" />
-          <entry key="project.opened" value="3" />
+          <entry key="project.opened" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="dart" value="8" />
+          <entry key="dart" value="27" />
           <entry key="md" value="2" />
           <entry key="packages" value="2" />
           <entry key="yaml" value="4" />
@@ -35,20 +40,20 @@
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Dart" value="8" />
+          <entry key="Dart" value="27" />
           <entry key="PLAIN_TEXT" value="4" />
           <entry key="YAML" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="dart" value="95" />
+          <entry key="dart" value="2648" />
           <entry key="yaml" value="51" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Dart" value="95" />
+          <entry key="Dart" value="2648" />
           <entry key="YAML" value="51" />
         </counts>
       </usages-collector>
@@ -59,10 +64,34 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/flutter_animation_progress_bar.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="438">
-              <caret line="78" column="8" lean-forward="true" selection-start-line="78" selection-start-column="8" selection-end-line="78" selection-end-column="8" />
+            <state relative-caret-position="270">
+              <caret line="18" column="32" lean-forward="true" selection-start-line="18" selection-start-column="32" selection-end-line="18" selection-end-column="32" />
               <folding>
-                <element signature="e#40#79#0" expanded="true" />
+                <element signature="e#41#80#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/example/lib/k1.dart">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="536">
+              <caret line="39" column="10" selection-start-line="39" selection-start-column="10" selection-end-line="39" selection-end-column="10" />
+              <folding>
+                <element signature="e#0#40#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/example/lib/k2.dart">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1350">
+              <caret line="90" column="51" selection-start-line="90" selection-start-column="51" selection-end-line="90" selection-end-column="51" />
+              <folding>
+                <element signature="e#0#40#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -71,8 +100,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/example/lib/main.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="264">
-              <caret line="37" column="30" lean-forward="true" selection-start-line="37" selection-start-column="30" selection-end-line="37" selection-end-column="30" />
+            <state relative-caret-position="472">
+              <caret line="46" column="97" selection-start-line="46" selection-start-column="97" selection-end-line="46" selection-end-column="97" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
@@ -81,6 +110,22 @@
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Dart File" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>tween</find>
+      <find>s</find>
+      <find>value</find>
+      <find>didchange</find>
+      <find>listen</find>
+    </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -91,6 +136,8 @@
         <option value="$PROJECT_DIR$/pubspec.yaml" />
         <option value="$PROJECT_DIR$/example/pubspec.yaml" />
         <option value="$PROJECT_DIR$/lib/flutter_animation_progress_bar.dart" />
+        <option value="$PROJECT_DIR$/example/lib/k1.dart" />
+        <option value="$PROJECT_DIR$/example/lib/k2.dart" />
         <option value="$PROJECT_DIR$/example/lib/main.dart" />
       </list>
     </option>
@@ -100,13 +147,14 @@
     <option name="width" value="1920" />
     <option name="height" value="975" />
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -142,6 +190,7 @@
       </pane>
       <pane id="PackagesPane" />
       <pane id="AndroidView" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -203,18 +252,16 @@
     <frame x="0" y="23" width="1920" height="975" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Captures" side_tool="true" />
-      <window_info id="Build Variants" side_tool="true" />
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25772098" />
       <window_info id="Structure" order="1" side_tool="true" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
       <window_info id="Capture Tool" order="4" />
       <window_info id="Favorites" order="5" side_tool="true" />
-      <window_info anchor="bottom" id="Logcat" />
-      <window_info anchor="bottom" id="Android Profiler" show_stripe_button="false" />
+      <window_info id="Build Variants" order="6" side_tool="true" />
+      <window_info id="Captures" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Dart Analysis" order="0" weight="0.32906976" />
-      <window_info active="true" anchor="bottom" id="Run" order="1" visible="true" weight="0.32906976" />
+      <window_info anchor="bottom" id="Run" order="1" weight="0.32906976" />
       <window_info anchor="bottom" id="TODO" order="2" />
       <window_info anchor="bottom" id="Debug" order="3" />
       <window_info anchor="bottom" id="Terminal" order="4" />
@@ -222,12 +269,14 @@
       <window_info anchor="bottom" id="Flutter Performance" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Messages" order="8" weight="0.32906976" />
-      <window_info anchor="right" id="Device File Explorer" side_tool="true" />
+      <window_info anchor="bottom" id="Logcat" order="9" />
+      <window_info anchor="bottom" id="Android Profiler" order="10" show_stripe_button="false" />
       <window_info anchor="right" id="Capture Analysis" order="0" />
       <window_info anchor="right" id="Theme Preview" order="1" />
       <window_info anchor="right" id="Flutter Inspector" order="2" />
       <window_info anchor="right" id="Flutter Outline" order="3" />
       <window_info anchor="right" id="Palette&#9;" order="4" />
+      <window_info anchor="right" id="Device File Explorer" order="5" side_tool="true" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -271,27 +320,112 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/flutter_animation_progress_bar.dart">
+    <entry file="file://$USER_HOME$/flutter/packages/flutter/lib/material.dart">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="438">
-          <caret line="78" column="8" lean-forward="true" selection-start-line="78" selection-start-column="8" selection-end-line="78" selection-end-column="8" />
+        <state>
           <folding>
-            <element signature="e#40#79#0" expanded="true" />
+            <element signature="e#0#4427#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/flutter/packages/flutter/lib/src/material/flutter_logo.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="183">
+          <caret line="20" column="8" selection-start-line="20" selection-start-column="8" selection-end-line="20" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/flutter/packages/flutter/lib/src/widgets/ticker_provider.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="183">
+          <caret line="154" column="6" selection-start-line="154" selection-start-column="6" selection-end-line="154" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/flutter/bin/cache/pkg/sky_engine/lib/core/duration.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="258">
+          <caret line="97" column="22" selection-start-line="97" selection-start-column="10" selection-end-line="97" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/flutter/packages/flutter/lib/src/widgets/transitions.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="95" column="47" selection-start-line="95" selection-start-column="47" selection-end-line="95" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/flutter/packages/flutter/lib/src/animation/animation_controller.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="413">
+          <caret line="695" column="7" selection-start-line="695" selection-start-column="7" selection-end-line="695" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/example/lib/k1.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="536">
+          <caret line="39" column="10" selection-start-line="39" selection-start-column="10" selection-end-line="39" selection-end-column="10" />
+          <folding>
+            <element signature="e#0#40#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/flutter/packages/flutter/lib/src/foundation/basic_types.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="14" column="8" selection-start-line="14" selection-start-column="8" selection-end-line="14" selection-end-column="8" />
         </state>
       </provider>
     </entry>
     <entry file="file://$USER_HOME$/flutter/packages/flutter/lib/src/widgets/framework.dart">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="183">
-          <caret line="949" column="8" selection-start-line="949" selection-start-column="8" selection-end-line="949" selection-end-column="8" />
+        <state relative-caret-position="173">
+          <caret line="4278" column="23" selection-start-line="4278" selection-start-column="23" selection-end-line="4278" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/flutter_animation_progress_bar.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" column="32" lean-forward="true" selection-start-line="18" selection-start-column="32" selection-end-line="18" selection-end-column="32" />
+          <folding>
+            <element signature="e#41#80#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/flutter/packages/flutter/lib/src/painting/basic_types.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="224">
+          <caret line="113" column="5" selection-start-line="113" selection-start-column="5" selection-end-line="113" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/flutter/packages/flutter/lib/src/widgets/basic.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="275">
+          <caret line="3565" column="26" selection-start-line="3565" selection-start-column="9" selection-end-line="3565" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/example/lib/k2.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1350">
+          <caret line="90" column="51" selection-start-line="90" selection-start-column="51" selection-end-line="90" selection-end-column="51" />
+          <folding>
+            <element signature="e#0#40#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/example/lib/main.dart">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="37" column="30" lean-forward="true" selection-start-line="37" selection-start-column="30" selection-end-line="37" selection-end-column="30" />
+        <state relative-caret-position="472">
+          <caret line="46" column="97" selection-start-line="46" selection-start-column="97" selection-end-line="46" selection-end-column="97" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
           </folding>
