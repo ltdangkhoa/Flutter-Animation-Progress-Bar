@@ -6,8 +6,9 @@ class FAProgressBar extends StatefulWidget {
       {Key key,
       this.currentValue = 0,
       this.size = 30,
-      this.backgroundColor = Colors.white,
-      this.progressColor,
+      this.borderRadius,
+      this.backgroundColor = Colors.transparent,
+      this.progressColor = const Color(0xffFA7268),
       this.animatedDuration = const Duration(milliseconds: 300),
       this.direction = Axis.horizontal,
 //      this.horizontalDirection = AxisDirection.left,
@@ -16,10 +17,12 @@ class FAProgressBar extends StatefulWidget {
 
   final int currentValue;
   final double size;
+  final BorderRadiusGeometry borderRadius;
   final Color backgroundColor;
   final Color progressColor;
   final Duration animatedDuration;
   final Axis direction;
+
 //  final AxisDirection horizontalDirection;
   final VerticalDirection verticalDirection;
 
@@ -36,7 +39,6 @@ class _FAProgressBarState extends State<FAProgressBar>
 
   @override
   void initState() {
-//    int animatedDuration = widget.animatedDuration;
     _controller =
         AnimationController(duration: widget.animatedDuration, vsync: this);
     _animation = Tween<double>(begin: _currentBegin, end: _currentEnd)
@@ -67,6 +69,7 @@ class _FAProgressBarState extends State<FAProgressBar>
       backgroundColor: widget.backgroundColor,
       progressColor: widget.progressColor,
       size: widget.size,
+      borderRadius: widget.borderRadius,
       direction: widget.direction,
       verticalDirection: widget.verticalDirection);
 
@@ -82,12 +85,14 @@ class AnimatedProgressBar extends AnimatedWidget {
       {Key key,
       Animation<double> animation,
       this.size,
+      this.borderRadius,
       this.backgroundColor,
       this.progressColor,
       this.direction,
       this.verticalDirection})
       : super(key: key, listenable: animation);
   final double size;
+  final BorderRadiusGeometry borderRadius;
   final Color backgroundColor;
   final Color progressColor;
   final Axis direction;
@@ -105,7 +110,7 @@ class AnimatedProgressBar extends AnimatedWidget {
             color: this.progressColor,
             width: 0.2,
           ),
-          borderRadius: new BorderRadius.circular(this.size/2),
+          borderRadius: this.borderRadius,
         ),
         child: Flex(
           direction: this.direction,
@@ -114,18 +119,13 @@ class AnimatedProgressBar extends AnimatedWidget {
             Expanded(
               flex: (animation.value * 100).toInt(),
               child: Container(
-                decoration: BoxDecoration(
-                  color: this.progressColor,
-                  borderRadius: new BorderRadius.circular(this.size/2),
-                )
-              ),
+                  decoration: BoxDecoration(
+                color: this.progressColor,
+                borderRadius: this.borderRadius,
+              )),
             ),
             Expanded(
-              flex: 100 - (animation.value * 100).toInt(),
-              child: Container(
-
-              )
-            )
+                flex: 100 - (animation.value * 100).toInt(), child: Container())
           ],
         ));
   }

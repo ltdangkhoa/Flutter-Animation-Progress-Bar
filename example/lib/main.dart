@@ -43,34 +43,37 @@ class _TestAppState extends State<TestApp> {
       body: Container(
           child: Column(
         children: <Widget>[
+          Padding(
+              padding: EdgeInsets.fromLTRB(20, 20, 20, 20),
+              child: Container(
+                child: FAProgressBar(
+                    size: 15,
+                    backgroundColor: Colors.white,
+                    progressColor: Colors.blueGrey,
+                    currentValue: _currentValue,
+                    animatedDuration: const Duration(milliseconds: 300),
+                    direction: Axis.horizontal,
+                    verticalDirection: VerticalDirection.up),
+              )),
           Container(
-            child: FAProgressBar(
-                size: 40,
-                backgroundColor: Colors.white,
-                progressColor: Colors.blueGrey,
-                currentValue: _currentValue,
-                animatedDuration: const Duration(milliseconds: 300),
-                direction: Axis.horizontal,
-                verticalDirection: VerticalDirection.up),
-          ),
-          Container(
-              height: 250,
+              height: 450,
               child: Padding(
                 padding: EdgeInsets.fromLTRB(20, 20, 20, 20),
                 child: Row(
                   children: <Widget>[
                     FAProgressBar(
-                        size: 30,
-                        backgroundColor: Colors.green,
-                        progressColor: Colors.yellowAccent,
+                        size: 40,
+                        borderRadius: new BorderRadius.circular(10),
+                        backgroundColor: Colors.white,
+                        progressColor: const Color(0xffFA7268),
                         currentValue: _currentValue,
                         animatedDuration: const Duration(milliseconds: 300),
                         direction: Axis.vertical,
                         verticalDirection: VerticalDirection.up),
+                    Spacer(),
                     FAProgressBar(
-                        size: 50,
-                        backgroundColor: Colors.brown,
-                        progressColor: Colors.blue,
+                        size: 40,
+                        progressColor: const Color(0xff5F4B8B),
                         currentValue: _currentValue,
                         animatedDuration: const Duration(milliseconds: 800),
                         direction: Axis.vertical,
@@ -85,6 +88,7 @@ class _TestAppState extends State<TestApp> {
                 child: Row(
               children: <Widget>[
                 buildFloatingButton("0", () => setEndPressed(0)),
+                buildFloatingButton("1", () => setEndPressed(1)),
                 buildFloatingButton("5", () => setEndPressed(5)),
                 buildFloatingButton("40", () => setEndPressed(40)),
                 buildFloatingButton("60", () => setEndPressed(60)),
