@@ -41,24 +41,60 @@ class _TestAppState extends State<TestApp> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        color: Colors.red,
-        child: Row(
-          children: <Widget>[
-            MyK2(value: _currentValue, direction: Axis.vertical, verticalDirection: VerticalDirection.down),
-            Container(
-                child: Column(
+          child: Column(
+        children: <Widget>[
+          Container(
+            child: FAProgressBar(
+                size: 40,
+                backgroundColor: Colors.white,
+                progressColor: Colors.blueGrey,
+                currentValue: _currentValue,
+                animatedDuration: const Duration(milliseconds: 300),
+                direction: Axis.horizontal,
+                verticalDirection: VerticalDirection.up),
+          ),
+          Container(
+              height: 250,
+              child: Padding(
+                padding: EdgeInsets.fromLTRB(20, 20, 20, 20),
+                child: Row(
+                  children: <Widget>[
+                    FAProgressBar(
+                        size: 30,
+                        backgroundColor: Colors.green,
+                        progressColor: Colors.yellowAccent,
+                        currentValue: _currentValue,
+                        animatedDuration: const Duration(milliseconds: 300),
+                        direction: Axis.vertical,
+                        verticalDirection: VerticalDirection.up),
+                    FAProgressBar(
+                        size: 50,
+                        backgroundColor: Colors.brown,
+                        progressColor: Colors.blue,
+                        currentValue: _currentValue,
+                        animatedDuration: const Duration(milliseconds: 800),
+                        direction: Axis.vertical,
+                        verticalDirection: VerticalDirection.down)
+                  ],
+                ),
+              )),
+          Container(
+              child: Padding(
+            padding: EdgeInsets.only(bottom: 10),
+            child: Container(
+                child: Row(
               children: <Widget>[
-                buildFloatingButton("10", () => setEndPressed(10)),
-                buildFloatingButton("30", () => setEndPressed(30)),
-                buildFloatingButton("50", () => setEndPressed(50)),
+                buildFloatingButton("0", () => setEndPressed(0)),
+                buildFloatingButton("5", () => setEndPressed(5)),
+                buildFloatingButton("40", () => setEndPressed(40)),
+                buildFloatingButton("60", () => setEndPressed(60)),
                 buildFloatingButton("70", () => setEndPressed(70)),
-                buildFloatingButton("90", () => setEndPressed(90)),
+                buildFloatingButton("100", () => setEndPressed(100)),
               ],
             )),
-            JumpingDotsProgressIndicator(fontSize: 35, )
-          ],
-        ),
-      ),
+          )),
+        ],
+      )),
     );
   }
 }

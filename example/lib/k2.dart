@@ -2,10 +2,10 @@ import 'package:flutter/animation.dart';
 import 'package:flutter/material.dart';
 
 class MyK2 extends StatefulWidget {
-  MyK2({Key key, this.value, this.direction, this.verticalDirection})
+  MyK2({Key key, this.currentValue, this.direction, this.verticalDirection})
       : super(key: key);
 
-  final int value;
+  final int currentValue;
   final Axis direction;
   final VerticalDirection verticalDirection;
 
@@ -21,42 +21,43 @@ class _MyK2State extends State<MyK2> with SingleTickerProviderStateMixin {
 
   @override
   void initState() {
-    super.initState();
 
     controller = AnimationController(
-        duration: const Duration(milliseconds: 2000), vsync: this);
+        duration: const Duration(milliseconds: 300), vsync: this);
     animation =
         Tween<double>(begin: currentBegin, end: currentEnd).animate(controller);
 //    animation.addStatusListener((status) {
 //      print('$status');
 //    });
 //    animation.addListener(() {
+//      print('anmation listener'+animation.value.toString());
 //      setState(() {});
 //    });
 //    controller.forward();
+    super.initState();
   }
 
   @override
   void didUpdateWidget(MyK2 oldWidget) {
+    print(animation.value);
+    setState(() {
+      currentBegin = animation.value;
+      currentEnd = widget.currentValue/100;
+      animation =
+          Tween<double>(begin: currentBegin, end: currentEnd).animate(controller);
+    });
+    print(currentBegin);
+    print(currentEnd);
+    controller.reset();
+    controller.forward();
     super.didUpdateWidget(oldWidget);
-    print(widget.value);
-    if (controller.isAnimating) {
-      controller.stop();
-    }
   }
 
-  void onNewValue(double beginValue, double endValue) {
-    setState(() {
-      currentBegin = beginValue / 100;
-      currentEnd = endValue / 100;
-      controller.forward();
-    });
-  }
 
   @override
   Widget build(BuildContext context) => AnimatedLogo(
       animation: animation,
-      value: widget.value,
+      value: widget.currentValue,
       direction: widget.direction,
       verticalDirection: widget.verticalDirection);
 
@@ -91,14 +92,14 @@ class AnimatedLogo extends AnimatedWidget {
           verticalDirection: this.verticalDirection,
           children: <Widget>[
             Flexible(
-//              flex: (animation.value * 100).toInt(),
-              flex: value,
+              flex: (animation.value * 100).toInt(),
+//              flex: currentValue,
               child: Container(
                 color: Colors.lightGreen,
               ),
             ),
-//            Spacer(flex: 100 - (animation.value * 100).toInt()),
-            Spacer(flex: 100 - value),
+            Spacer(flex: 100 - (animation.value * 100).toInt()),
+//            Spacer(flex: 100 - currentValue),
           ],
         ));
   }
