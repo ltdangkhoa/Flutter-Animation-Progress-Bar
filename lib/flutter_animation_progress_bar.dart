@@ -5,26 +5,31 @@ class FAProgressBar extends StatefulWidget {
   FAProgressBar(
       {Key key,
       this.currentValue = 0,
+      this.maxValue = 100,
       this.size = 30,
-      this.borderRadius,
-      this.backgroundColor = Colors.transparent,
-      this.progressColor = const Color(0xffFA7268),
       this.animatedDuration = const Duration(milliseconds: 300),
       this.direction = Axis.horizontal,
-//      this.horizontalDirection = AxisDirection.left,
-      this.verticalDirection = VerticalDirection.down})
+      this.verticalDirection = VerticalDirection.down,
+      this.borderRadius = 8,
+      this.backgroundColor = Colors.transparent,
+      this.progressColor = const Color(0xffFA7268),
+      this.changeColorValue,
+      this.changeProgressColor = Colors.blue,
+      this.displayText})
       : super(key: key);
 
   final int currentValue;
+  final int maxValue;
   final double size;
-  final BorderRadiusGeometry borderRadius;
-  final Color backgroundColor;
-  final Color progressColor;
   final Duration animatedDuration;
   final Axis direction;
-
-//  final AxisDirection horizontalDirection;
   final VerticalDirection verticalDirection;
+  final double borderRadius;
+  final Color backgroundColor;
+  final Color progressColor;
+  final int changeColorValue;
+  final Color changeProgressColor;
+  final String displayText;
 
   @override
   _FAProgressBarState createState() => _FAProgressBarState();
@@ -46,15 +51,11 @@ class _FAProgressBarState extends State<FAProgressBar>
     super.initState();
   }
 
-  ///Controller for class [FAProgressBar] go here with Reactive style
-  ///When the new state of [FAProgressBar.currentValue] raised,
-  ///update [_currentBegin] and [_currentEnd] and also reset [_animation] value.
-  ///Trigger [_controller] reset then forward before rebuild the widget
   @override
   void didUpdateWidget(FAProgressBar oldWidget) {
     setState(() {
       _currentBegin = _animation.value;
-      _currentEnd = widget.currentValue / 100;
+      _currentEnd = widget.currentValue / widget.maxValue;
       _animation = Tween<double>(begin: _currentBegin, end: _currentEnd)
           .animate(_controller);
     });
@@ -65,13 +66,9 @@ class _FAProgressBarState extends State<FAProgressBar>
 
   @override
   Widget build(BuildContext context) => AnimatedProgressBar(
-      animation: _animation,
-      backgroundColor: widget.backgroundColor,
-      progressColor: widget.progressColor,
-      size: widget.size,
-      borderRadius: widget.borderRadius,
-      direction: widget.direction,
-      verticalDirection: widget.verticalDirection);
+        animation: _animation,
+        widget: widget,
+      );
 
   @override
   void dispose() {
@@ -81,48 +78,81 @@ class _FAProgressBarState extends State<FAProgressBar>
 }
 
 class AnimatedProgressBar extends AnimatedWidget {
-  AnimatedProgressBar(
-      {Key key,
-      Animation<double> animation,
-      this.size,
-      this.borderRadius,
-      this.backgroundColor,
-      this.progressColor,
-      this.direction,
-      this.verticalDirection})
-      : super(key: key, listenable: animation);
-  final double size;
-  final BorderRadiusGeometry borderRadius;
-  final Color backgroundColor;
-  final Color progressColor;
-  final Axis direction;
-  final VerticalDirection verticalDirection;
+  AnimatedProgressBar({
+    Key key,
+    Animation<double> animation,
+    this.widget,
+  }) : super(key: key, listenable: animation);
+  final widget;
 
   Widget build(BuildContext context) {
     final Animation<double> animation = listenable;
+    final _colorTween = ColorTween(
+        begin: widget.progressColor, end: widget.changeProgressColor);
+
+    double transformValue = 0;
+    if (widget.changeColorValue != null) {
+      if (((widget.changeColorValue - 5) / widget.maxValue) > animation.value) {
+        transformValue = 0;
+      } else if (((widget.changeColorValue) / widget.maxValue) <=
+          animation.value) {
+        transformValue = 1;
+      } else {
+        transformValue = (widget.maxValue * animation.value -
+                (widget.changeColorValue - 5)) *
+            0.2;
+      }
+    }
+
+    List<Widget> progressWidgets = [];
+    Widget progressWidget = new Opacity(
+        opacity: 1,
+        child: Container(
+            decoration: BoxDecoration(
+          color: widget.changeColorValue != null
+              ? _colorTween.transform(transformValue)
+              : widget.progressColor,
+          borderRadius: new BorderRadius.circular(widget.borderRadius),
+        )));
+    progressWidgets.add(progressWidget);
+
+    if (widget.displayText != null) {
+      Widget textWidget = new Align(
+          alignment: widget.direction == Axis.horizontal
+              ? FractionalOffset(0.95, 0.5)
+              : (widget.verticalDirection == VerticalDirection.up
+                  ? FractionalOffset(0.5, 0.05)
+                  : FractionalOffset(0.5, 0.95)),
+          child: Text(
+            (animation.value * widget.maxValue).toInt().toString() +
+                widget.displayText,
+            softWrap: false,
+            style: TextStyle(color: Colors.white, fontSize: 12),
+          ));
+      progressWidgets.add(textWidget);
+    }
+
     return Container(
         alignment: Alignment.bottomCenter,
-        width: this.direction == Axis.vertical ? this.size : null,
-        height: this.direction == Axis.horizontal ? this.size : null,
+        width: widget.direction == Axis.vertical ? widget.size : null,
+        height: widget.direction == Axis.horizontal ? widget.size : null,
         decoration: BoxDecoration(
-          color: this.backgroundColor,
+          color: widget.backgroundColor,
+          borderRadius: new BorderRadius.circular(widget.borderRadius),
           border: Border.all(
-            color: this.progressColor,
+            color: widget.progressColor,
             width: 0.2,
           ),
-          borderRadius: this.borderRadius,
         ),
         child: Flex(
-          direction: this.direction,
-          verticalDirection: this.verticalDirection,
+          direction: widget.direction,
+          verticalDirection: widget.verticalDirection,
           children: <Widget>[
             Expanded(
               flex: (animation.value * 100).toInt(),
-              child: Container(
-                  decoration: BoxDecoration(
-                color: this.progressColor,
-                borderRadius: this.borderRadius,
-              )),
+              child: Stack(
+                children: progressWidgets,
+              ),
             ),
             Expanded(
                 flex: 100 - (animation.value * 100).toInt(), child: Container())

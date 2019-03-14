@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 
 import 'package:flutter_animation_progress_bar/flutter_animation_progress_bar.dart';
-import 'k1.dart';
-import 'k2.dart';
 
 void main() => runApp(MyApp());
 
@@ -22,7 +20,7 @@ class TestApp extends StatefulWidget {
 }
 
 class _TestAppState extends State<TestApp> {
-  int _currentValue = 20;
+  int _currentValue = 0;
 
   setEndPressed(int value) {
     setState(() {
@@ -43,18 +41,30 @@ class _TestAppState extends State<TestApp> {
       body: Container(
           child: Column(
         children: <Widget>[
-          Padding(
-              padding: EdgeInsets.fromLTRB(20, 20, 20, 20),
-              child: Container(
-                child: FAProgressBar(
-                    size: 15,
-                    backgroundColor: Colors.white,
-                    progressColor: Colors.blueGrey,
-                    currentValue: _currentValue,
-                    animatedDuration: const Duration(milliseconds: 300),
-                    direction: Axis.horizontal,
-                    verticalDirection: VerticalDirection.up),
-              )),
+          Container(
+              height: 100,
+              child: Padding(
+                  padding: EdgeInsets.fromLTRB(20, 20, 20, 20),
+                  child: Column(children: [
+                    FAProgressBar(
+                      currentValue: _currentValue,
+                      displayText: '%',
+                    ),
+                    Spacer(),
+                    FAProgressBar(
+                      currentValue: _currentValue,
+                      size: 25,
+                      maxValue: 150,
+                      changeColorValue: 100,
+                      changeProgressColor: Colors.pink,
+                      backgroundColor: Colors.white,
+                      progressColor: Colors.lightBlue,
+                      animatedDuration: const Duration(milliseconds: 300),
+                      direction: Axis.horizontal,
+                      verticalDirection: VerticalDirection.up,
+                      displayText: 'mph',
+                    )
+                  ]))),
           Container(
               height: 450,
               child: Padding(
@@ -62,14 +72,28 @@ class _TestAppState extends State<TestApp> {
                 child: Row(
                   children: <Widget>[
                     FAProgressBar(
+                      currentValue: _currentValue,
+                      maxValue: 140,
+                      size: 40,
+                      animatedDuration: const Duration(milliseconds: 400),
+                      direction: Axis.vertical,
+                      verticalDirection: VerticalDirection.up,
+                      borderRadius: 0,
+                      backgroundColor: Colors.white,
+                      progressColor: Colors.green,
+                      changeColorValue: 90,
+                      changeProgressColor: Colors.red,
+                      displayText: '°C',
+                    ),
+                    Spacer(),
+                    FAProgressBar(
+                        maxValue: 140,
                         size: 40,
-                        borderRadius: new BorderRadius.circular(10),
-                        backgroundColor: Colors.white,
-                        progressColor: const Color(0xffFA7268),
+                        borderRadius: 40,
+                        progressColor: Colors.lightGreen,
                         currentValue: _currentValue,
-                        animatedDuration: const Duration(milliseconds: 300),
                         direction: Axis.vertical,
-                        verticalDirection: VerticalDirection.up),
+                        verticalDirection: VerticalDirection.down),
                     Spacer(),
                     FAProgressBar(
                         size: 40,
@@ -77,7 +101,7 @@ class _TestAppState extends State<TestApp> {
                         currentValue: _currentValue,
                         animatedDuration: const Duration(milliseconds: 800),
                         direction: Axis.vertical,
-                        verticalDirection: VerticalDirection.down)
+                        verticalDirection: VerticalDirection.up)
                   ],
                 ),
               )),
@@ -88,12 +112,11 @@ class _TestAppState extends State<TestApp> {
                 child: Row(
               children: <Widget>[
                 buildFloatingButton("0", () => setEndPressed(0)),
-                buildFloatingButton("1", () => setEndPressed(1)),
-                buildFloatingButton("5", () => setEndPressed(5)),
-                buildFloatingButton("40", () => setEndPressed(40)),
-                buildFloatingButton("60", () => setEndPressed(60)),
                 buildFloatingButton("70", () => setEndPressed(70)),
+                buildFloatingButton("80", () => setEndPressed(80)),
+                buildFloatingButton("90", () => setEndPressed(90)),
                 buildFloatingButton("100", () => setEndPressed(100)),
+                buildFloatingButton("140", () => setEndPressed(140)),
               ],
             )),
           )),
