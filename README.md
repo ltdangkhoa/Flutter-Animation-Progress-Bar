@@ -12,7 +12,7 @@ In order to use this package, do import
 import 'package:flutter_animation_progress_bar/flutter_animation_progress_bar.dart';
 ```
 
-Basic example implementation can be done like below code:
+Basic implementation can be done like below code:
 ```dart
 FAProgressBar(
   currentValue: 20,
@@ -21,7 +21,7 @@ FAProgressBar(
 ```
 
 ### Example App
-You can find more examples from [Example App](example/README.md)
+You can find more examples from [Example App](example)
 
 
 ### API
