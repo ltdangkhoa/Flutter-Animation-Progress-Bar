@@ -5,6 +5,36 @@ This colorful [Flutter](https://flutter.io) widget package aims to show an anima
 ![](flutter_animation_progress_bar.gif)
 
 
+### Flutter Create Contest
+This package is also a submission to Flutter Create contest. The basic rules of this contest is measured the total Dart file size less or 5KB.
+
+To evaluate total size of all Dart files in the ZIP file:
+```
+find . -name "*.dart" ! -name "*test*"  | xargs cat | wc -c
+```
+
+To evaluate only the package dart code:
+```
+find . -name "*.dart" ! -name "*test*" ! -path "*example*"  | xargs cat | wc -c
+```
+
+To run simple example app with total size of dart code less or equal 5KB:
+```
+cd example
+flutter clean
+flutter run
+```
+Hot restart app with "R" for replay the animation
+
+To run full example app:
+```
+cd example
+mv lib/main.dart tmp && mv lib/main.dart.bk lib/main.dart && mv tmp lib/main.dart.bk
+flutter clean
+flutter run
+```
+Using built-in float buttons to change value and see the effect
+
 ### Getting Started
 
 In order to use this package, do import
@@ -14,10 +44,18 @@ import 'package:flutter_animation_progress_bar/flutter_animation_progress_bar.da
 
 Basic implementation can be done like below code:
 ```dart
-FAProgressBar(
-  currentValue: 20,
-  displayText: '%',
-)
+import 'package:flutter/widgets.dart';
+import 'package:flutter_animation_progress_bar/flutter_animation_progress_bar.dart';
+
+void main() {
+  runApp(
+    Center(
+        child: FAProgressBar(
+      currentValue: 80,
+      displayText: '%',
+    )),
+  );
+}
 ```
 
 ### Example App
@@ -28,18 +66,18 @@ You can find more examples from [Example App](example)
 In this table, you can find all attributes provided by this package:
 
 | Attribute           | Default value                     | Description |
-| ------------------- | --------------------------------- | -           |
+| ------------------- | --------------------------------- | ----------- |
 | currentValue        | 0                                 | Set the current value for progress bar. This value should be in **stateful** so that whenever **setState()** has been called, the progress bar will trigger an animation from **latest currentValue** to **new currentValue** |
 | maxValue            | 100                               | Max value to be displayed as progress bar. <br>*Current value can be greater than max value*  |
 | size                | 30                                | The bar height if direction in Axis.horizontal. <br>The bar width if direction in Axis.vertical |
-| animatedDuration    | const Duration(milliseconds: 300) |-|
+| animatedDuration    | const Duration(milliseconds: 300) | Set the duration for an animation cycle |
 | direction           | Axis.horizontal                   | The bar can be in **Axis.horizontal** or **Axis.vertical** direction |
 | verticalDirection   | VerticalDirection.down            | With vertical direction, the bar can be **VerticalDirection.up** or **VerticalDirection.down** direction|
 | borderRadius        | 8                                 | Set the bar border radius |
 | backgroundColor     | Colors.transparent                | Set the bar background color |
 | progressColor       | const Color(0xFFFA7268)           | Set the bar progressing color |
-| changeColorValue    | ```null```                        | Set a value that progress color should be changed to <br> [0**<span style="color:blue">-----------</span>**[**70**]**<span style="color:red">-----</span>**100] |
-| changeProgressColor |const Color(0xFF5F4B8B)            | Color that progress color will be changed to whenever **currentValue** greater than **changeColorValue** |
+| changeColorValue    | ```null```                        | Set a value that progress color should be changed to <br> [0---blue----[**70**]-red-100] |
+| changeProgressColor |const Color(0xFF5F4B8B)            | Color that progressing color will be changed to, whenever **currentValue** greater than **changeColorValue** |
 | displayText         | ```null```                        | Text to display belonging with currentValue. <br>Examples:<br> ```%``` -> ```20%```<br> ```°F``` -> ```80°F```|
 
 ### Objects
@@ -64,5 +102,4 @@ class FAProgressBar {
 
 ### Feedback
 
-Feel free to [leave any feedback](https://github.com/ltdangkhoa)
-for helping support this package 🍻 
+Feel free to [leave any feedback](https://github.com/ltdangkhoa) for helping support this package 🍻 
