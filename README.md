@@ -20,19 +20,27 @@ FAProgressBar(
 )
 ```
 
-### More examples
+### Example App
+You can find more examples from [Example App](example/README.md)
 
-You can also customize progress bar for your own purpose:
-```dart
-
-```
 
 ### API
 In this table, you can find all attributes provided by this package:
 
-|Attribute|Default value|Description|
-|-|-|-|
-|currentValue|0|Set the current value for progress bar. This value should be in **stateful** so that |
+| Attribute           | Default value                     | Description |
+| ------------------- | --------------------------------- | -           |
+| currentValue        | 0                                 | Set the current value for progress bar. This value should be in **stateful** so that whenever **setState()** has been called, the progress bar will trigger an animation from **latest currentValue** to **new currentValue** |
+| maxValue            | 100                               | Max value to be displayed as progress bar. <br>*Current value can be greater than max value*  |
+| size                | 30                                | The bar height if direction in Axis.horizontal. <br>The bar width if direction in Axis.vertical |
+| animatedDuration    | const Duration(milliseconds: 300) |-|
+| direction           | Axis.horizontal                   | The bar can be in **Axis.horizontal** or **Axis.vertical** direction |
+| verticalDirection   | VerticalDirection.down            | With vertical direction, the bar can be **VerticalDirection.up** or **VerticalDirection.down** direction|
+| borderRadius        | 8                                 | Set the bar border radius |
+| backgroundColor     | Colors.transparent                | Set the bar background color |
+| progressColor       | const Color(0xFFFA7268)           | Set the bar progressing color |
+| changeColorValue    | ```null```                        | Set a value that progress color should be changed to <br> [0**<span style="color:blue">-----------</span>**[**70**]**<span style="color:red">-----</span>**100] |
+| changeProgressColor |const Color(0xFF5F4B8B)            | Color that progress color will be changed to whenever **currentValue** greater than **changeColorValue** |
+| displayText         | ```null```                        | Text to display belonging with currentValue. <br>Examples:<br> ```%``` -> ```20%```<br> ```°F``` -> ```80°F```|
 
 ### Objects
 ```dart
@@ -54,7 +62,7 @@ class FAProgressBar {
  ```
 
 
-## Feedback
+### Feedback
 
-Please feel free to [give me any feedback](https://github.com/ltdangkhoa)
-helping support this package 🍻 
+Feel free to [leave any feedback](https://github.com/ltdangkhoa)
+for helping support this package 🍻 

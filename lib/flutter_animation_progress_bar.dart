@@ -12,9 +12,9 @@ class FAProgressBar extends StatefulWidget {
       this.verticalDirection = VerticalDirection.down,
       this.borderRadius = 8,
       this.backgroundColor = Colors.transparent,
-      this.progressColor = const Color(0xffFA7268),
+      this.progressColor = const Color(0xFFFA7268),
       this.changeColorValue,
-      this.changeProgressColor = Colors.blue,
+      this.changeProgressColor = const Color(0xFF5F4B8B),
       this.displayText})
       : super(key: key);
 
