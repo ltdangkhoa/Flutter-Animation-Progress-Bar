@@ -1,16 +1,18 @@
-# example
+## Example of Flutter Animation Progress Bar
 
-A new Flutter project.
+This is the example app of ```Flutter Animation Progress Bar``` package.
 
-## Getting Started
 
-This project is a starting point for a Flutter application.
+### Getting Started
 
-A few resources to get you started if this is your first Flutter project:
+In order to run this example, make sure there is a connected device or running simulator on your machine. Run below command lines:
+```
+cd example
+flutter run
+```
 
-- [Lab: Write your first Flutter app](https://flutter.io/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.io/docs/cookbook)
 
-For help getting started with Flutter, view our 
-[online documentation](https://flutter.io/docs), which offers tutorials, 
-samples, guidance on mobile development, and a full API reference.
+### Feedback
+
+Feel free to [leave any feedback](https://github.com/ltdangkhoa)
+for helping support this package 🍻 
