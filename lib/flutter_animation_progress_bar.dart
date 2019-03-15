@@ -85,23 +85,21 @@ class AnimatedProgressBar extends AnimatedWidget {
   }) : super(key: key, listenable: animation);
   final widget;
 
+  double transformValue(x, begin, end, before) {
+    double y = (end * x - (begin - before)) * (1 / before);
+    return y < 0 ? 0 : ((y > 1) ? 1 : y);
+  }
+
   Widget build(BuildContext context) {
     final Animation<double> animation = listenable;
-    final _colorTween = ColorTween(
-        begin: widget.progressColor, end: widget.changeProgressColor);
 
-    double transformValue = 0;
+    Color progressColor = widget.progressColor;
     if (widget.changeColorValue != null) {
-      if (((widget.changeColorValue - 5) / widget.maxValue) > animation.value) {
-        transformValue = 0;
-      } else if (((widget.changeColorValue) / widget.maxValue) <=
-          animation.value) {
-        transformValue = 1;
-      } else {
-        transformValue = (widget.maxValue * animation.value -
-                (widget.changeColorValue - 5)) *
-            0.2;
-      }
+      final _colorTween = ColorTween(
+          begin: widget.progressColor, end: widget.changeProgressColor);
+      double _transformValue = transformValue(
+          animation.value, widget.changeColorValue, widget.maxValue, 5);
+      progressColor = _colorTween.transform(_transformValue);
     }
 
     List<Widget> progressWidgets = [];
@@ -109,9 +107,7 @@ class AnimatedProgressBar extends AnimatedWidget {
         opacity: 1,
         child: Container(
             decoration: BoxDecoration(
-          color: widget.changeColorValue != null
-              ? _colorTween.transform(transformValue)
-              : widget.progressColor,
+          color: progressColor,
           borderRadius: new BorderRadius.circular(widget.borderRadius),
         )));
     progressWidgets.add(progressWidget);
