@@ -6,34 +6,39 @@ This colorful [Flutter](https://flutter.io) widget package aims to show an anima
 
 
 ### Flutter Create Contest
-This package is also a submission to Flutter Create contest. The basic rules of this contest is measured the total Dart file size less or 5KB.
+This package is also a submission to Flutter Create contest. The basic rule of this contest is to measure the total Dart file size less or equal 5KB.
 
-To evaluate total size of all Dart files in the ZIP file:
+After unzipping the compressed file, run following command to update dependencies:
+```
+flutter packages get
+```
+
+To evaluate the total size of all Dart files:
 ```
 find . -name "*.dart" ! -name "*test*"  | xargs cat | wc -c
 ```
 
-To evaluate only the package dart code:
+To evaluate only the package Dart code:
 ```
 find . -name "*.dart" ! -name "*test*" ! -path "*example*"  | xargs cat | wc -c
 ```
 
-To run simple example app with total size of dart code less or equal 5KB:
+To run simple example app with a total size of dart code less or equal 5KB:
 ```
 cd example
 flutter clean
 flutter run
 ```
-Hot restart app with "R" for replay the animation
+Hot restart app with "R" to replay the animation
 
-To run full example app:
+To run the full example app:
 ```
 cd example
 mv lib/main.dart tmp && mv lib/main.dart.bk lib/main.dart && mv tmp lib/main.dart.bk
 flutter clean
 flutter run
 ```
-Using built-in float buttons to change value and see the effect
+Using built-in float action buttons to change value and see the effect
 
 ### Getting Started
 
@@ -74,10 +79,10 @@ In this table, you can find all attributes provided by this package:
 | direction           | Axis.horizontal                   | The bar can be in **Axis.horizontal** or **Axis.vertical** direction |
 | verticalDirection   | VerticalDirection.down            | With vertical direction, the bar can be **VerticalDirection.up** or **VerticalDirection.down** direction|
 | borderRadius        | 8                                 | Set the bar border radius |
-| backgroundColor     | Colors.transparent                | Set the bar background color |
+| backgroundColor     | const Color(0x00FFFFFF)           | Set the bar background color |
 | progressColor       | const Color(0xFFFA7268)           | Set the bar progressing color |
 | changeColorValue    | ```null```                        | Set a value that progress color should be changed to <br> [0---blue----[**70**]-red-100] |
-| changeProgressColor |const Color(0xFF5F4B8B)            | Color that progressing color will be changed to, whenever **currentValue** greater than **changeColorValue** |
+| changeProgressColor | const Color(0xFF5F4B8B)           | Color that progressing color will be changed to, whenever **currentValue** greater than **changeColorValue** |
 | displayText         | ```null```                        | Text to display belonging with currentValue. <br>Examples:<br> ```%``` -> ```20%```<br> ```°F``` -> ```80°F```|
 
 ### Objects
