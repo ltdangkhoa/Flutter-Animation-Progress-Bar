@@ -2,7 +2,7 @@ name: flutter_animation_progress_bar
 description: A Flutter animation progress bar package.
 version: 0.0.2
 author: Kris Luu <luuthaidangkhoa@gmail.com>
-homepage:
+homepage: https://gitlab.com/ltdangkhoa/flutter-animation-progress-bar
 
 environment:
   sdk: ">=2.0.0-dev.68.0 <3.0.0"
