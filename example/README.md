@@ -32,4 +32,4 @@ Using built-in float action buttons to change value and see the effect
 
 ### Feedback
 
-Feel free to [leave any feedback](https://github.com/ltdangkhoa) for helping support this package 🍻 
+Feel free to [leave any feedback](https://github.com/ltdangkhoa/Flutter-Animation-Progress-Bar/issues) for helping support this package 🍻 
