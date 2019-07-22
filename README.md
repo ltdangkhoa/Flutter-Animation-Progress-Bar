@@ -79,6 +79,8 @@ In this table, you can find all attributes provided by this package:
 | direction           | Axis.horizontal                   | The bar can be in **Axis.horizontal** or **Axis.vertical** direction |
 | verticalDirection   | VerticalDirection.down            | With vertical direction, the bar can be **VerticalDirection.up** or **VerticalDirection.down** direction|
 | borderRadius        | 8                                 | Set the bar border radius |
+| borderColor         | const Color(0xFFFA7268)           | Set the bar border color |
+| borderWidth         | 0.2                               | Set the bar border width |
 | backgroundColor     | const Color(0x00FFFFFF)           | Set the bar background color |
 | progressColor       | const Color(0xFFFA7268)           | Set the bar progressing color |
 | changeColorValue    | ```null```                        | Set a value that progress color should be changed to <br> [0---blue----[**70**]-red-100] |
