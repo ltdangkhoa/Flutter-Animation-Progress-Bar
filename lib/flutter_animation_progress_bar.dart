@@ -11,6 +11,8 @@ class FAProgressBar extends StatefulWidget {
       this.direction = Axis.horizontal,
       this.verticalDirection = VerticalDirection.down,
       this.borderRadius = 8,
+      this.borderColor = const Color(0xFFFA7268),
+      this.borderWidth = 0.2,
       this.backgroundColor = const Color(0x00FFFFFF),
       this.progressColor = const Color(0xFFFA7268),
       this.changeColorValue,
@@ -136,7 +138,7 @@ class AnimatedProgressBar extends AnimatedWidget {
         decoration: BoxDecoration(
           color: widget.backgroundColor,
           borderRadius: BorderRadius.circular(widget.borderRadius),
-          border: Border.all(color: widget.progressColor, width: 0.2),
+          border: Border.all(color: widget.borderColor, width: widget.borderWidth),
         ),
         child: Flex(
           direction: widget.direction,
