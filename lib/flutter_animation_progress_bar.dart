@@ -26,6 +26,8 @@ class FAProgressBar extends StatefulWidget {
   final Axis direction;
   final VerticalDirection verticalDirection;
   final double borderRadius;
+  final Color borderColor;
+  final double borderWidth;
   final Color backgroundColor;
   final Color progressColor;
   final int changeColorValue;
