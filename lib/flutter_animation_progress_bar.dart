@@ -109,10 +109,11 @@ class AnimatedProgressBar extends AnimatedWidget {
 
     List<Widget> progressWidgets = [];
     Widget progressWidget = new Container(
-        decoration: BoxDecoration(
-            color: progressColor,
-            borderRadius: BorderRadius.circular(widget.borderRadius),
-            border: widget.border));
+      decoration: BoxDecoration(
+          color: progressColor,
+          borderRadius: BorderRadius.circular(widget.borderRadius),
+          border: widget.border),
+    );
     progressWidgets.add(progressWidget);
 
     if (widget.displayText != null) {
@@ -148,7 +149,9 @@ class AnimatedProgressBar extends AnimatedWidget {
                 flex: (animation.value * 100).toInt(),
                 child: Stack(children: progressWidgets)),
             Expanded(
-                flex: 100 - (animation.value * 100).toInt(), child: Container())
+              flex: 100 - (animation.value * 100).toInt(),
+              child: Container(),
+            )
           ],
         ),
       ),

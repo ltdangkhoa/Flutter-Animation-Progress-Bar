@@ -1,3 +1,11 @@
+## [1.0.4] - 2020-08-20
+
+* Capability to change all the border properties by @Marileen Jansen
+
+## [1.0.3] - 2020-08-20
+
+* Added borderColor and borderWidth as optional parameters by @askprateek
+
 ## [1.0.1] - 2019-04-08
 
 * First release to pub.dartlang.org

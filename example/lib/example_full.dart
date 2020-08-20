@@ -79,8 +79,10 @@ class _TestAppState extends State<TestApp> {
                       direction: Axis.vertical,
                       verticalDirection: VerticalDirection.up,
                       borderRadius: 0,
-                      borderColor: Colors.indigo,
-                      borderWidth: 5,
+                      border: Border.all(
+                        color: Colors.indigo,
+                        width: 0.5,
+                      ),
                       backgroundColor: Colors.white,
                       progressColor: Colors.green,
                       changeColorValue: 90,
