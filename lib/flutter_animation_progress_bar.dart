@@ -2,22 +2,24 @@ import 'package:flutter/animation.dart';
 import 'package:flutter/widgets.dart';
 
 class FAProgressBar extends StatefulWidget {
-  FAProgressBar(
-      {Key key,
-      this.currentValue = 0,
-      this.maxValue = 100,
-      this.size = 30,
-      this.animatedDuration = const Duration(milliseconds: 300),
-      this.direction = Axis.horizontal,
-      this.verticalDirection = VerticalDirection.down,
-      this.borderRadius = 8,
-      this.border,
-      this.backgroundColor = const Color(0x00FFFFFF),
-      this.progressColor = const Color(0xFFFA7268),
-      this.changeColorValue,
-      this.changeProgressColor = const Color(0xFF5F4B8B),
-      this.displayText})
-      : super(key: key);
+  FAProgressBar({
+    Key key,
+    this.currentValue = 0,
+    this.maxValue = 100,
+    this.size = 30,
+    this.animatedDuration = const Duration(milliseconds: 300),
+    this.direction = Axis.horizontal,
+    this.verticalDirection = VerticalDirection.down,
+    this.borderRadius = 8,
+    this.border,
+    this.backgroundColor = const Color(0x00FFFFFF),
+    this.progressColor = const Color(0xFFFA7268),
+    this.changeColorValue,
+    this.changeProgressColor = const Color(0xFF5F4B8B),
+    this.displayText,
+    this.displayTextStyle =
+        const TextStyle(color: const Color(0xFFFFFFFF), fontSize: 12),
+  }) : super(key: key);
   final int currentValue;
   final int maxValue;
   final double size;
@@ -31,6 +33,7 @@ class FAProgressBar extends StatefulWidget {
   final int changeColorValue;
   final Color changeProgressColor;
   final String displayText;
+  final TextStyle displayTextStyle;
 
   @override
   _FAProgressBarState createState() => _FAProgressBarState();
@@ -102,9 +105,15 @@ class AnimatedProgressBar extends AnimatedWidget {
 
     if (widget.changeColorValue != null) {
       final _colorTween = ColorTween(
-          begin: widget.progressColor, end: widget.changeProgressColor);
+        begin: widget.progressColor,
+        end: widget.changeProgressColor,
+      );
       progressColor = _colorTween.transform(transformValue(
-          animation.value, widget.changeColorValue, widget.maxValue, 5));
+        animation.value,
+        widget.changeColorValue,
+        widget.maxValue,
+        5,
+      ));
     }
 
     List<Widget> progressWidgets = [];
@@ -118,16 +127,18 @@ class AnimatedProgressBar extends AnimatedWidget {
 
     if (widget.displayText != null) {
       Widget textProgress = new Container(
-          alignment: widget.direction == Axis.horizontal
-              ? FractionalOffset(0.95, 0.5)
-              : (widget.verticalDirection == VerticalDirection.up
-                  ? FractionalOffset(0.5, 0.05)
-                  : FractionalOffset(0.5, 0.95)),
-          child: Text(
-              (animation.value * widget.maxValue).toInt().toString() +
-                  widget.displayText,
-              softWrap: false,
-              style: TextStyle(color: const Color(0xFFFFFFFF), fontSize: 12)));
+        alignment: widget.direction == Axis.horizontal
+            ? FractionalOffset(0.95, 0.5)
+            : (widget.verticalDirection == VerticalDirection.up
+                ? FractionalOffset(0.5, 0.05)
+                : FractionalOffset(0.5, 0.95)),
+        child: Text(
+          (animation.value * widget.maxValue).toInt().toString() +
+              widget.displayText,
+          softWrap: false,
+          style: widget.displayTextStyle,
+        ),
+      );
       progressWidgets.add(textProgress);
     }
 
@@ -146,8 +157,11 @@ class AnimatedProgressBar extends AnimatedWidget {
           verticalDirection: widget.verticalDirection,
           children: <Widget>[
             Expanded(
-                flex: (animation.value * 100).toInt(),
-                child: Stack(children: progressWidgets)),
+              flex: (animation.value * 100).toInt(),
+              child: Stack(
+                children: progressWidgets,
+              ),
+            ),
             Expanded(
               flex: 100 - (animation.value * 100).toInt(),
               child: Container(),

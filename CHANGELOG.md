@@ -1,3 +1,9 @@
+# Changelog
+
+## [1.0.6] - 2020-10-21
+
+* Capability to change TextStyle of displayText (#4)
+
 ## [1.0.4] - 2020-08-20
 
 * Capability to change all the border properties by @Marileen Jansen

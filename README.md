@@ -85,6 +85,7 @@ In this table, you can find all attributes provided by this package:
 | changeColorValue    | ```null```                        | Set a value that progress color should be changed to <br> [0---blue----[**70**]-red-100] |
 | changeProgressColor | const Color(0xFF5F4B8B)           | Color that progressing color will be changed to, whenever **currentValue** greater than **changeColorValue** |
 | displayText         | ```null```                        | Text to display belonging with currentValue. <br>Examples:<br> ```%``` -> ```20%```<br> ```°F``` -> ```80°F```|
+| displayTextStyle    | ...                               | TextStyle of displayText|
 
 ### Objects
 ```dart
@@ -103,6 +104,7 @@ class FAProgressBar {
   final int changeColorValue;
   final Color changeProgressColor;
   final String displayText;
+  final TextStyle displayTextStyle;
 }
  ```
 
