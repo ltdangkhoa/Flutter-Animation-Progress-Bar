@@ -10,7 +10,7 @@ class FAProgressBar extends StatefulWidget {
     this.animatedDuration = const Duration(milliseconds: 300),
     this.direction = Axis.horizontal,
     this.verticalDirection = VerticalDirection.down,
-    this.borderRadius = 8,
+    BorderRadiusGeometry borderRadius,
     this.border,
     this.backgroundColor = const Color(0x00FFFFFF),
     this.progressColor = const Color(0xFFFA7268),
@@ -19,14 +19,15 @@ class FAProgressBar extends StatefulWidget {
     this.displayText,
     this.displayTextStyle =
         const TextStyle(color: const Color(0xFFFFFFFF), fontSize: 12),
-  }) : super(key: key);
+  })  : _borderRadius = borderRadius ?? BorderRadius.circular(8),
+        super(key: key);
   final int currentValue;
   final int maxValue;
   final double size;
   final Duration animatedDuration;
   final Axis direction;
   final VerticalDirection verticalDirection;
-  final double borderRadius;
+  final BorderRadiusGeometry _borderRadius;
   final BoxBorder border;
   final Color backgroundColor;
   final Color progressColor;
@@ -92,7 +93,8 @@ class AnimatedProgressBar extends AnimatedWidget {
     Animation<double> animation,
     this.widget,
   }) : super(key: key, listenable: animation);
-  final widget;
+
+  final FAProgressBar widget;
 
   double transformValue(x, begin, end, before) {
     double y = (end * x - (begin - before)) * (1 / before);
@@ -117,16 +119,17 @@ class AnimatedProgressBar extends AnimatedWidget {
     }
 
     List<Widget> progressWidgets = [];
-    Widget progressWidget = new Container(
+    Widget progressWidget = Container(
       decoration: BoxDecoration(
-          color: progressColor,
-          borderRadius: BorderRadius.circular(widget.borderRadius),
-          border: widget.border),
+        color: progressColor,
+        borderRadius: widget._borderRadius,
+        border: widget.border,
+      ),
     );
     progressWidgets.add(progressWidget);
 
     if (widget.displayText != null) {
-      Widget textProgress = new Container(
+      Widget textProgress = Container(
         alignment: widget.direction == Axis.horizontal
             ? FractionalOffset(0.95, 0.5)
             : (widget.verticalDirection == VerticalDirection.up
@@ -149,7 +152,7 @@ class AnimatedProgressBar extends AnimatedWidget {
         height: widget.direction == Axis.horizontal ? widget.size : null,
         decoration: BoxDecoration(
           color: widget.backgroundColor,
-          borderRadius: BorderRadius.circular(widget.borderRadius),
+          borderRadius: widget._borderRadius,
           border: widget.border,
         ),
         child: Flex(

@@ -78,7 +78,7 @@ class _TestAppState extends State<TestApp> {
                       animatedDuration: const Duration(milliseconds: 400),
                       direction: Axis.vertical,
                       verticalDirection: VerticalDirection.up,
-                      borderRadius: 0,
+                      borderRadius: BorderRadius.circular(0),
                       border: Border.all(
                         color: Colors.indigo,
                         width: 0.5,
@@ -93,7 +93,10 @@ class _TestAppState extends State<TestApp> {
                     FAProgressBar(
                         maxValue: 140,
                         size: 40,
-                        borderRadius: 40,
+                        borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(40),
+                          bottomRight: Radius.circular(40),
+                        ),
                         progressColor: const Color(0xff5F4B8B),
                         currentValue: _currentValue,
                         direction: Axis.vertical,
