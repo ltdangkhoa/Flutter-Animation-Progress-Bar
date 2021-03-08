@@ -6,6 +6,24 @@
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="NONE" />
   </component>
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="CMakeSettings">
     <configurations>
       <configuration PROFILE_NAME="Debug" CONFIG_NAME="Debug" />
@@ -14,10 +32,6 @@
   <component name="ChangeListManager">
     <list default="true" id="d3d4bd43-5f31-4ca2-abf3-00bd6a86b493" name="Default Changelist" comment="Add more code">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CHANGELOG.md" beforeDir="false" afterPath="$PROJECT_DIR$/CHANGELOG.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/flutter_animation_progress_bar.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/flutter_animation_progress_bar.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,6 +51,7 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RESET_MODE" value="HARD" />
   </component>
   <component name="ProjectId" id="1azWtdmOr24wCZU6R2H3elK6alp" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -52,8 +67,13 @@
     <property name="dart.analysis.tool.window.visible" value="false" />
     <property name="io.flutter.reload.alreadyRun" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="flutter.settings" />
+    <property name="settings.editor.selected.configurable" value="dart.settings" />
     <property name="show.migrate.to.gradle.popup" value="false" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/example" />
+    </key>
   </component>
   <component name="RunManager" selected="Flutter.example_full.dart">
     <configuration name="example_full.dart" type="FlutterRunConfigurationType" factoryName="Flutter">
@@ -85,6 +105,28 @@
       <option name="presentableId" value="Default" />
       <updated>1552297066690</updated>
     </task>
+    <task id="LOCAL-00001" summary="add feature to use different radius">
+      <created>1614351398590</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1614351398590</updated>
+    </task>
+    <task id="LOCAL-00002" summary="add feature to use different radius">
+      <created>1614351789552</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1614351789552</updated>
+    </task>
+    <task id="LOCAL-00003" summary="bump version">
+      <created>1614351924816</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1614351924816</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -101,6 +143,16 @@
       <is-autoscroll-to-source value="true" />
     </todo-panel>
   </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ORDER">
+      <list>
+        <option value="0" />
+        <option value="2" />
+        <option value="3" />
+        <option value="1" />
+      </list>
+    </option>
+  </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
@@ -115,36 +167,43 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Add more code" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add more code" />
+    <MESSAGE value="add feature to use different radius" />
+    <MESSAGE value="bump version" />
+    <option name="LAST_COMMIT_MESSAGE" value="bump version" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="184" y="90" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1597902067379">
-      <screen x="0" y="23" width="1440" height="813" />
+    <state width="2518" height="374" key="GridCell.Tab.0.bottom" timestamp="1615206519718">
+      <screen x="2560" y="25" width="2560" height="1415" />
     </state>
-    <state x="184" y="90" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1440.813@0.23.1440.813" timestamp="1597902067379" />
-    <state x="457" y="225" key="#com.intellij.ide.util.TreeFileChooserDialog" timestamp="1597902042876">
-      <screen x="0" y="23" width="1440" height="813" />
+    <state width="2518" height="406" key="GridCell.Tab.0.bottom/-1440.565.1440.875/0.25.2560.1415/2560.25.2560.1415@0.25.2560.1415" timestamp="1614352070554" />
+    <state width="2518" height="374" key="GridCell.Tab.0.bottom/-1440.565.1440.875/2560.25.2560.1415/0.25.2560.1415@2560.25.2560.1415" timestamp="1615206519718" />
+    <state width="2518" height="374" key="GridCell.Tab.0.center" timestamp="1615206519716">
+      <screen x="2560" y="25" width="2560" height="1415" />
     </state>
-    <state x="457" y="225" key="#com.intellij.ide.util.TreeFileChooserDialog/0.23.1440.813@0.23.1440.813" timestamp="1597902042876" />
-    <state width="1398" height="206" key="GridCell.Tab.0.bottom" timestamp="1597934252929">
-      <screen x="0" y="23" width="1440" height="813" />
+    <state width="2518" height="406" key="GridCell.Tab.0.center/-1440.565.1440.875/0.25.2560.1415/2560.25.2560.1415@0.25.2560.1415" timestamp="1614352070553" />
+    <state width="2518" height="374" key="GridCell.Tab.0.center/-1440.565.1440.875/2560.25.2560.1415/0.25.2560.1415@2560.25.2560.1415" timestamp="1615206519716" />
+    <state width="2518" height="374" key="GridCell.Tab.0.left" timestamp="1615206519715">
+      <screen x="2560" y="25" width="2560" height="1415" />
     </state>
-    <state width="1398" height="206" key="GridCell.Tab.0.bottom/0.23.1440.813@0.23.1440.813" timestamp="1597934252929" />
-    <state width="1398" height="206" key="GridCell.Tab.0.center" timestamp="1597934252929">
-      <screen x="0" y="23" width="1440" height="813" />
+    <state width="2518" height="406" key="GridCell.Tab.0.left/-1440.565.1440.875/0.25.2560.1415/2560.25.2560.1415@0.25.2560.1415" timestamp="1614352070553" />
+    <state width="2518" height="374" key="GridCell.Tab.0.left/-1440.565.1440.875/2560.25.2560.1415/0.25.2560.1415@2560.25.2560.1415" timestamp="1615206519715" />
+    <state width="2518" height="374" key="GridCell.Tab.0.right" timestamp="1615206519716">
+      <screen x="2560" y="25" width="2560" height="1415" />
     </state>
-    <state width="1398" height="206" key="GridCell.Tab.0.center/0.23.1440.813@0.23.1440.813" timestamp="1597934252929" />
-    <state width="1398" height="206" key="GridCell.Tab.0.left" timestamp="1597934252928">
-      <screen x="0" y="23" width="1440" height="813" />
+    <state width="2518" height="406" key="GridCell.Tab.0.right/-1440.565.1440.875/0.25.2560.1415/2560.25.2560.1415@0.25.2560.1415" timestamp="1614352070554" />
+    <state width="2518" height="374" key="GridCell.Tab.0.right/-1440.565.1440.875/2560.25.2560.1415/0.25.2560.1415@2560.25.2560.1415" timestamp="1615206519716" />
+    <state x="781" y="368" key="SettingsEditor" timestamp="1614351496853">
+      <screen x="0" y="25" width="2560" height="1415" />
     </state>
-    <state width="1398" height="206" key="GridCell.Tab.0.left/0.23.1440.813@0.23.1440.813" timestamp="1597934252928" />
-    <state width="1398" height="206" key="GridCell.Tab.0.right" timestamp="1597934252929">
-      <screen x="0" y="23" width="1440" height="813" />
+    <state x="781" y="368" key="SettingsEditor/-1440.565.1440.875/0.25.2560.1415/2560.25.2560.1415@0.25.2560.1415" timestamp="1614351496853" />
+    <state x="3440" y="469" key="Vcs.Push.Dialog.v2" timestamp="1615206060795">
+      <screen x="2560" y="25" width="2560" height="1415" />
     </state>
-    <state width="1398" height="206" key="GridCell.Tab.0.right/0.23.1440.813@0.23.1440.813" timestamp="1597934252929" />
-    <state x="412" y="58" width="615" height="735" key="find.popup" timestamp="1603266539198">
-      <screen x="0" y="25" width="1440" height="802" />
+    <state x="880" y="469" key="Vcs.Push.Dialog.v2/-1440.565.1440.875/0.25.2560.1415/2560.25.2560.1415@0.25.2560.1415" timestamp="1614351931948" />
+    <state x="3440" y="469" key="Vcs.Push.Dialog.v2/-1440.565.1440.875/2560.25.2560.1415/0.25.2560.1415@2560.25.2560.1415" timestamp="1615206060795" />
+    <state x="100" y="125" width="2360" height="1215" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1614351774539">
+      <screen x="0" y="25" width="2560" height="1415" />
     </state>
-    <state x="412" y="58" width="615" height="735" key="find.popup/0.25.1440.802@0.25.1440.802" timestamp="1603266539198" />
+    <state x="100" y="125" width="2360" height="1215" key="com.intellij.history.integration.ui.views.FileHistoryDialog/-1440.565.1440.875/0.25.2560.1415/2560.25.2560.1415@0.25.2560.1415" timestamp="1614351774539" />
   </component>
 </project>
