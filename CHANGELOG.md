@@ -1,8 +1,8 @@
 # Changelog
 ## [2.0.0] - 2021-03-08
 
-* migrate to null safety
-* bar can have different border styles
+* Migrate to null safety
+* Bar can have different border styles
 
 ## [1.0.6] - 2020-10-21
 
