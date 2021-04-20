@@ -67,7 +67,7 @@ class _FAProgressBarState extends State<FAProgressBar>
     setState(() {
       _currentBegin = _animation.value;
       
-      if (widget.currentValue == 0 && widget.maxValue == 0) {
+      if (widget.currentValue == 0 || widget.maxValue == 0) {
         _currentEnd = 0;
       } else {
         _currentEnd = widget.currentValue / widget.maxValue;
