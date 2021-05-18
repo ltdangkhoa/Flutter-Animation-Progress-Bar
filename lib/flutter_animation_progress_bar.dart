@@ -66,7 +66,13 @@ class _FAProgressBarState extends State<FAProgressBar>
   void triggerAnimation() {
     setState(() {
       _currentBegin = _animation.value;
-      _currentEnd = widget.currentValue / widget.maxValue;
+      
+      if (widget.currentValue == 0 || widget.maxValue == 0) {
+        _currentEnd = 0;
+      } else {
+        _currentEnd = widget.currentValue / widget.maxValue;
+      }
+      
       _animation = Tween<double>(begin: _currentBegin, end: _currentEnd)
           .animate(_controller);
     });
