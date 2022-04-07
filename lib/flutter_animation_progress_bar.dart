@@ -21,8 +21,8 @@ class FAProgressBar extends StatefulWidget {
         const TextStyle(color: const Color(0xFFFFFFFF), fontSize: 12),
   })  : _borderRadius = borderRadius ?? BorderRadius.circular(8),
         super(key: key);
-  final int currentValue;
-  final int maxValue;
+  final double currentValue;
+  final double maxValue;
   final double size;
   final Duration animatedDuration;
   final Axis direction;
@@ -66,13 +66,13 @@ class _FAProgressBarState extends State<FAProgressBar>
   void triggerAnimation() {
     setState(() {
       _currentBegin = _animation.value;
-      
+
       if (widget.currentValue == 0 || widget.maxValue == 0) {
         _currentEnd = 0;
       } else {
         _currentEnd = widget.currentValue / widget.maxValue;
       }
-      
+
       _animation = Tween<double>(begin: _currentBegin, end: _currentEnd)
           .animate(_controller);
     });
@@ -143,7 +143,7 @@ class AnimatedProgressBar extends AnimatedWidget {
                 ? FractionalOffset(0.5, 0.05)
                 : FractionalOffset(0.5, 0.95)),
         child: Text(
-          (animation.value * widget.maxValue).toInt().toString() +
+          (animation.value * widget.maxValue).toDouble().toString() +
               widget.displayText!,
           softWrap: false,
           style: widget.displayTextStyle,
