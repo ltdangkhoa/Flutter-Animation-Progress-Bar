@@ -91,8 +91,8 @@ In this table, you can find all attributes provided by this package:
 ```dart
 class FAProgressBar {
 
-  final int currentValue;
-  final int maxValue;
+  final double currentValue;
+  final double maxValue;
   final double size;
   final Duration animatedDuration;
   final Axis direction;
