@@ -20,9 +20,9 @@ class TestApp extends StatefulWidget {
 }
 
 class _TestAppState extends State<TestApp> {
-  int _currentValue = 0;
+  double _currentValue = 0;
 
-  setEndPressed(int value) {
+  setEndPressed(double value) {
     setState(() {
       _currentValue = value;
     });
@@ -121,8 +121,8 @@ class _TestAppState extends State<TestApp> {
               children: <Widget>[
                 buildFloatingButton("0", () => setEndPressed(0)),
                 buildFloatingButton("70", () => setEndPressed(70)),
-                buildFloatingButton("80", () => setEndPressed(80)),
-                buildFloatingButton("90", () => setEndPressed(90)),
+                buildFloatingButton("80.5", () => setEndPressed(80.5)),
+                buildFloatingButton("90.25", () => setEndPressed(90.25)),
                 buildFloatingButton("100", () => setEndPressed(100)),
                 buildFloatingButton("140", () => setEndPressed(140)),
               ],
