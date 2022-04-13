@@ -77,6 +77,7 @@ class _FAProgressBarState extends State<FAProgressBar>
           .animate(_controller);
     });
     _controller.reset();
+    _controller.duration = widget.animatedDuration;
     _controller.forward();
   }
 
