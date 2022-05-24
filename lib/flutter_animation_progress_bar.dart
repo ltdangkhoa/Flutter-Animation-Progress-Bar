@@ -1,7 +1,13 @@
 import 'package:flutter/animation.dart';
 import 'package:flutter/widgets.dart';
 
-String _defaultFormatValue(double value) => value.toStringAsFixed(2);
+String _defaultFormatValue(double value, int? fixed) {
+  if (fixed != null) {
+    return value.toStringAsFixed(fixed);
+  } else {
+    return value.toStringAsFixed(value.truncateToDouble() == value ? 0 : 2);
+  }
+}
 
 class FAProgressBar extends StatefulWidget {
   FAProgressBar({
@@ -19,6 +25,7 @@ class FAProgressBar extends StatefulWidget {
     this.changeColorValue,
     this.changeProgressColor = const Color(0xFF5F4B8B),
     this.formatValue = _defaultFormatValue,
+    this.formatValueFixed,
     this.displayText,
     this.displayTextStyle =
         const TextStyle(color: const Color(0xFFFFFFFF), fontSize: 12),
@@ -36,7 +43,8 @@ class FAProgressBar extends StatefulWidget {
   final Color progressColor;
   final int? changeColorValue;
   final Color changeProgressColor;
-  final String Function(double value) formatValue;
+  final String Function(double value, int? fixed) formatValue;
+  final int? formatValueFixed;
   final String? displayText;
   final TextStyle displayTextStyle;
 
@@ -148,7 +156,8 @@ class AnimatedProgressBar extends AnimatedWidget {
                 ? FractionalOffset(0.5, 0.05)
                 : FractionalOffset(0.5, 0.95)),
         child: Text(
-          widget.formatValue.call(animation.value * widget.maxValue) +
+          widget.formatValue.call(
+                  animation.value * widget.maxValue, widget.formatValueFixed) +
               widget.displayText!,
           softWrap: false,
           style: widget.displayTextStyle,

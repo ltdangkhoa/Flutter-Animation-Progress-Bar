@@ -1,12 +1,15 @@
 name: flutter_animation_progress_bar
 description: This colorful Flutter widget package aims to show an animation progress bar in reactive style. It also supports both vertical and horizontal bar.
-version: 2.0.0
+version: 2.2.1
 authors:
-  - VNAppMob <contact@vnappmob.com>
-  - Kris Luu <luuthaidangkhoa@gmail.com>
+  - VNAppMob <hi@vnappmob.com>
+  - Kris Luu <khoa.luu@vnappmob.com>
   - askprateek
   - Marileen Jansen
   - Muhammad Mohiuddin <mmohiuddin@kranus-health.de>
+  - mkranus
+  - TranLinh101h
+  - daadu
 homepage: https://github.com/ltdangkhoa/Flutter-Animation-Progress-Bar
 
 environment:

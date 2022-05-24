@@ -63,6 +63,7 @@ class _TestAppState extends State<TestApp> {
                       direction: Axis.horizontal,
                       verticalDirection: VerticalDirection.up,
                       displayText: 'mph',
+                      formatValueFixed: 2,
                     )
                   ]))),
           Container(
@@ -91,25 +92,27 @@ class _TestAppState extends State<TestApp> {
                     ),
                     Spacer(),
                     FAProgressBar(
-                        maxValue: 140,
-                        size: 40,
-                        borderRadius: BorderRadius.only(
-                          topLeft: Radius.circular(40),
-                          bottomRight: Radius.circular(40),
-                        ),
-                        progressColor: const Color(0xff5F4B8B),
-                        currentValue: _currentValue,
-                        direction: Axis.vertical,
-                        verticalDirection: VerticalDirection.down),
+                      maxValue: 140,
+                      size: 40,
+                      borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(40),
+                        bottomRight: Radius.circular(40),
+                      ),
+                      progressColor: const Color(0xff5F4B8B),
+                      currentValue: _currentValue,
+                      direction: Axis.vertical,
+                      verticalDirection: VerticalDirection.down,
+                    ),
                     Spacer(),
                     FAProgressBar(
-                        size: 40,
-                        progressColor: Colors.black54,
-                        backgroundColor: Colors.white,
-                        currentValue: _currentValue,
-                        animatedDuration: const Duration(milliseconds: 800),
-                        direction: Axis.vertical,
-                        verticalDirection: VerticalDirection.up)
+                      size: 40,
+                      progressColor: Colors.black54,
+                      backgroundColor: Colors.white,
+                      currentValue: _currentValue,
+                      animatedDuration: const Duration(milliseconds: 800),
+                      direction: Axis.vertical,
+                      verticalDirection: VerticalDirection.up,
+                    )
                   ],
                 ),
               )),

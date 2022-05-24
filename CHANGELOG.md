@@ -1,4 +1,14 @@
 # Changelog
+
+## [2.1.1] - 2022-04-13
+
+* The currentValue and maxValue now can accept double type
+* Allow to update animation duration
+
+## [2.0.1] - 2021-08-09
+
+* Fix bug when value and max are 0 #13
+
 ## [2.0.0] - 2021-03-08
 
 * Migrate to null safety
