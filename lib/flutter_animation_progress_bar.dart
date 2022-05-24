@@ -1,6 +1,8 @@
 import 'package:flutter/animation.dart';
 import 'package:flutter/widgets.dart';
 
+String _defaultValueToText(double value) => value.toString();
+
 class FAProgressBar extends StatefulWidget {
   FAProgressBar({
     Key? key,
@@ -16,6 +18,7 @@ class FAProgressBar extends StatefulWidget {
     this.progressColor = const Color(0xFFFA7268),
     this.changeColorValue,
     this.changeProgressColor = const Color(0xFF5F4B8B),
+    this.valueToText = _defaultValueToText,
     this.displayText,
     this.displayTextStyle =
         const TextStyle(color: const Color(0xFFFFFFFF), fontSize: 12),
@@ -33,6 +36,7 @@ class FAProgressBar extends StatefulWidget {
   final Color progressColor;
   final int? changeColorValue;
   final Color changeProgressColor;
+  final String Function(double value) valueToText;
   final String? displayText;
   final TextStyle displayTextStyle;
 
@@ -144,7 +148,7 @@ class AnimatedProgressBar extends AnimatedWidget {
                 ? FractionalOffset(0.5, 0.05)
                 : FractionalOffset(0.5, 0.95)),
         child: Text(
-          (animation.value * widget.maxValue).toDouble().toString() +
+          widget.valueToText.call(animation.value * widget.maxValue) +
               widget.displayText!,
           softWrap: false,
           style: widget.displayTextStyle,
