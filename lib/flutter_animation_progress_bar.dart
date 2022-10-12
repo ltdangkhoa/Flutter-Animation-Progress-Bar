@@ -29,6 +29,7 @@ class FAProgressBar extends StatefulWidget {
     this.displayText,
     this.displayTextStyle =
         const TextStyle(color: const Color(0xFFFFFFFF), fontSize: 12),
+    this.progressGradient
   })  : _borderRadius = borderRadius ?? BorderRadius.circular(8),
         super(key: key);
   final double currentValue;
@@ -47,6 +48,7 @@ class FAProgressBar extends StatefulWidget {
   final int? formatValueFixed;
   final String? displayText;
   final TextStyle displayTextStyle;
+  final Gradient? progressGradient;
 
   @override
   _FAProgressBarState createState() => _FAProgressBarState();
@@ -141,7 +143,8 @@ class AnimatedProgressBar extends AnimatedWidget {
     List<Widget> progressWidgets = [];
     Widget progressWidget = Container(
       decoration: BoxDecoration(
-        color: progressColor,
+        color: widget.progressGradient != null ? null : progressColor,
+        gradient: widget.progressGradient,
         borderRadius: widget._borderRadius,
         border: widget.border,
       ),
