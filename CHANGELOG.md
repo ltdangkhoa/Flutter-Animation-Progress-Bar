@@ -1,5 +1,9 @@
 # Changelog
 
+## [2.2.1] - 2022-05-24
+
+* Fixed bug on display double value by @daadu
+
 ## [2.1.1] - 2022-04-13
 
 * The currentValue and maxValue now can accept double type

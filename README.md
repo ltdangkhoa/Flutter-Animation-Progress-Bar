@@ -82,7 +82,7 @@ In this table, you can find all attributes provided by this package:
 | border              | ```null```                        | Set the bar border style by **BoxBorder** |
 | backgroundColor     | const Color(0x00FFFFFF)           | Set the bar background color |
 | progressColor       | const Color(0xFFFA7268)           | Set the bar progressing color |
-| progressGradient       | ```null``` | Set the bar progressing gradient. Overrides `progressColor` |
+| progressGradient    | ```null```                        | Set the bar progressing gradient. Overrides `progressColor` |
 | changeColorValue    | ```null```                        | Set a value that progress color should be changed to <br> [0---blue----[**70**]-red-100] |
 | changeProgressColor | const Color(0xFF5F4B8B)           | Color that progressing color will be changed to, whenever **currentValue** greater than **changeColorValue** |
 | displayText         | ```null```                        | Text to display belonging with currentValue. <br>Examples:<br> ```%``` -> ```20%```<br> ```°F``` -> ```80°F```|
