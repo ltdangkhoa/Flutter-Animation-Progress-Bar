@@ -42,13 +42,24 @@ class _TestAppState extends State<TestApp> {
           child: Column(
         children: <Widget>[
           Container(
-              height: 100,
+              height: 150,
               child: Padding(
                   padding: EdgeInsets.fromLTRB(20, 20, 20, 20),
                   child: Column(children: [
                     FAProgressBar(
                       currentValue: _currentValue,
                       displayText: '%',
+                    ),
+                    Spacer(),
+                    FAProgressBar(
+                      currentValue: _currentValue,
+                      displayText: '%',
+                      progressGradient: LinearGradient(
+                        colors: [
+                          Colors.blue.withOpacity(0.75),
+                          Colors.green.withOpacity(0.75),
+                        ],
+                      ),
                     ),
                     Spacer(),
                     FAProgressBar(
